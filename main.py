@@ -9,14 +9,16 @@ screen.bgcolor("black")
 screen.title("Score")
 screen.tracer(0)
 
-s = Snake()
-s.create_snake()
+snake = Snake()
+
 
 # snake move forward
 game_start = True
 while game_start:
     screen.update()
     time.sleep(0.2)
+
+    snake.move()
 
 
 
