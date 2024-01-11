@@ -1,23 +1,22 @@
 from turtle import Turtle, Screen
+from snake import Snake
+import time
 
 # Setup screen
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.bgcolor("black")
 screen.title("Score")
+screen.tracer(0)
 
-#created 3 turtle that create rectangle snake shape
-x_cor = 0
-for _ in range(3):
-    t = Turtle()
-    t.penup()
-    current_position = t.xcor() + x_cor
-    print(current_position)
-    t.setposition(current_position, 0)
-    t.shape("square")
-    t.color("white")
-    x_cor += -20
+s = Snake()
+s.create_snake()
 
+# snake move forward
+game_start = True
+while game_start:
+    screen.update()
+    time.sleep(0.2)
 
 
 
