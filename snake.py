@@ -1,11 +1,15 @@
 from turtle import Turtle
 POSITION = [(0, 0), (-20, 0), (-40, 0)]
-
+DOWN = 270
+UP = 90
+RIGHT = 0
+LEFT = 180
 
 class Snake:
     def __init__(self):
         self.snakes = []
         self.create_snake()
+        self.snake_head = self.snakes[0]
 
     def create_snake(self):
         for pos in POSITION:
@@ -23,6 +27,21 @@ class Snake:
 
         self.snakes[0].forward(20)
 
+    def up(self):
+        if self.snake_head.heading() != DOWN:
+            self.snake_head.setheading(UP)
+
+    def down(self):
+        if self.snake_head.heading() != UP:
+            self.snake_head.setheading(DOWN)
+
+    def left(self):
+        if self.snake_head.heading() != RIGHT:
+            self.snake_head.setheading(LEFT)
+
+    def right(self):
+        if self.snake_head.heading() != LEFT:
+            self.snake_head.setheading(RIGHT)
 
 
 
