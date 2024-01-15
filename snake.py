@@ -16,6 +16,7 @@ class Snake:
             new_snake = Turtle("square")
             new_snake.color("white")
             new_snake.penup()
+            new_snake.speed(3)
             new_snake.goto(pos)
             self.snakes.append(new_snake)
 
